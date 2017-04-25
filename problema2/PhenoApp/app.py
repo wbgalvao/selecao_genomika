@@ -31,7 +31,7 @@ def genes():
     cur = get_db().cursor()
     cur.execute("SELECT gene FROM pheno_db WHERE disease=? COLLATE NOCASE", (disease,))
     result = cur.fetchall()
-    genes = [result[0][0] for row in result]
+    genes = ', '.join([column[0] for column in result])
     return render_template('genes.html', disease=disease, genes=genes), 200
 
 app.run(debug=False, use_reloader=False)
