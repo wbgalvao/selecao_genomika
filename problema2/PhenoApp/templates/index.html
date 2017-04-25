@@ -1,0 +1,12 @@
+<html>
+	<body>
+		<img src="/static/logo.png"/>
+		<div>
+			<p>Informe a doença de interesse na caixa abaixo</p>
+			<form action="{{ url_for('genes') }}" method="POST">
+				<input type="text" name="disease" size="30">
+				<input type="submit" value="Pesquisar">
+			</form>
+		</div>
+	</body>
+</html>
