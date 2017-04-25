@@ -23,7 +23,7 @@ pg_cursor = pg_conn.cursor()
 sqlite_cursor = sqlite_conn.cursor()
 
 
-print("Collecting data from pheno_db..")
+print("Collecting data from pheno_db...")
 pg_cursor.execute("SELECT * FROM pheno_db")
 rows = pg_cursor.fetchall()
 print("Data collected!")
@@ -33,7 +33,7 @@ sqlite_cursor.execute("DELETE FROM pheno_db")
 sqlite_conn.commit()
 print("Local data deleted!")
 
-print("Updating local database..")
+print("Updating local database...")
 for row in rows:
     sqlite_cursor.execute("INSERT INTO pheno_db (id, gene, disease) VALUES (:id, :gene, :disease)", {"id": row[0], "gene": row[1], "disease": row[2]})
     sqlite_conn.commit()
