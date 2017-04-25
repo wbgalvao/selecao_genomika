@@ -1,0 +1,5 @@
+CREATE TABLE pheno_db (
+	id INT NOT NULL PRIMARY KEY,
+	gene VARCHAR(20),
+	disease VARCHAR(20)
+);
