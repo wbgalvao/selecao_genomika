@@ -2,8 +2,12 @@
 <html>
 	<body>
 		<img src="/static/logo.png"/>
-		<p>Resultado:</p>
-		<p>{{ disease  }}</p>
-		<p>Genes encontrados: {{ genes }}</p>
+		{% if genes %}
+			<p>Resultado:</p>
+			<p>{{ disease  }}</p>
+			<p>Genes encontrados: {{ genes }}</p>
+		{% else %}
+			<p>Doença não encontrada. Tente outra vez.</p>
+		{% endif %}
 	</body>
 </html>
