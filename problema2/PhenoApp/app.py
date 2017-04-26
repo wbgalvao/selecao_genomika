@@ -27,7 +27,7 @@ def index():
 
 @app.route('/genes', methods=['POST'])
 def genes():
-    disease = request.form['disease']
+    disease = request.form['disease'].strip()
     cur = get_db().cursor()
     cur.execute("SELECT gene FROM pheno_db WHERE disease=? COLLATE NOCASE", (disease,))
     result = cur.fetchall()
